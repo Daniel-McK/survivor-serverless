@@ -4,7 +4,7 @@ const ddb = new AWS.DynamoDB({
   region: "us-east-1",
   apiVersion: "2012-08-10"
 });
-
+const { unmarshall } = AWS.DynamoDB.Converter;
 
 exports.handler = function(event, context, callback) {
   ddb.scan({
@@ -18,7 +18,7 @@ exports.handler = function(event, context, callback) {
         headers: {
           "Access-Control-Allow-Origin": "*"
         },
-        body: JSON.stringify(data.Items)
+        body: JSON.stringify(data.Items.map(unmarshall))
       });
     }
   });

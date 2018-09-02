@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/Daniel-McK/survivor-serverless#readme",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.10"
   },
   "devDependencies": {
     "webpack": "^4.17.1",
