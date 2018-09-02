@@ -7,7 +7,8 @@ const credentials = require('./config/aws');
 const lambda = new AWS.Lambda({ region: 'us-east-1', credentials });
 
 const lambdaFunctions = [
-  'getSeasonList'
+  'getSeasonList',
+  'createSeason'
 ];
 
 lambdaFunctions.forEach(deployLambda);
