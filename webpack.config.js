@@ -3,7 +3,8 @@ const path = require("path");
 module.exports = {
   entry: {
     createSeason: "./lambda/createSeason/index.ts",
-    getSeasonList: "./lambda/getSeasonList/index.ts"
+    getSeasonList: "./lambda/getSeasonList/index.ts",
+    getContestantsBySeason: "./lambda/getContestantsBySeason/index.ts"
   },
   module: {
     rules: [

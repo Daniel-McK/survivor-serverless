@@ -1,4 +1,5 @@
 import { customError } from "../../utils/errors";
+import { TableName } from "../../config/tables";
 
 const AWS = require("aws-sdk");
 
@@ -32,7 +33,7 @@ exports.handler = function(event, context, callback) {
 
   ddb.putItem(
     {
-      TableName: "Season",
+      TableName: TableName.Season,
       Item: marshall(season)
     },
     err => {

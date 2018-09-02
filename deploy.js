@@ -8,7 +8,8 @@ const lambda = new AWS.Lambda({ region: 'us-east-1', credentials });
 
 const lambdaFunctions = [
   'getSeasonList',
-  'createSeason'
+  'createSeason',
+  'getContestantsBySeason'
 ];
 
 lambdaFunctions.forEach(deployLambda);

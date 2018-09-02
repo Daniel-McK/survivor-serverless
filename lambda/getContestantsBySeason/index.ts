@@ -8,8 +8,19 @@ const ddb = new AWS.DynamoDB({
 const { unmarshall } = AWS.DynamoDB.Converter;
 
 exports.handler = function(event, context, callback) {
-  ddb.scan({
-    TableName: TableName.Season
+  if (!event.pathParameters || !event.pathParameters.seasonId) {
+    return customError('Missing seasonId', callback);
+  }
+
+  ddb.query({
+    TableName: TableName.Contestant,
+    ExpressionAttributeValues: {
+      ":s": {
+        S: event.pathParameters.seasonId
+       }
+     },
+     KeyConditionExpression: "seasonId = :s",
+
   }, (err, data) => {
     if (err) {
       customError(err.message, callback);
