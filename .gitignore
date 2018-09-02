@@ -64,4 +64,4 @@ typings/
 config/aws.js
 
 # build files
-lambda/*/code.zip
+dist/

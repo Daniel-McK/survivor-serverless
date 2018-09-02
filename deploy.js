@@ -15,9 +15,9 @@ lambdaFunctions.forEach(deployLambda);
 
 function deployLambda(lambdaName) {
   child_process.execSync(`zip -r code.zip *`, {
-    cwd: resolve(`./lambda/${lambdaName}`)
+    cwd: resolve(`./dist/${lambdaName}`)
   });
-  const zipFileName = `./lambda/${lambdaName}/code.zip`;
+  const zipFileName = `./dist/${lambdaName}/code.zip`;
   fs.readFile(zipFileName, (err, data) => {
     if (err) {
       console.log(`Failed to read ${zipFileName}`);

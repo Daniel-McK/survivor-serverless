@@ -1,11 +1,15 @@
-"use strict";
+import { customError } from "../../utils/errors";
 
 const AWS = require("aws-sdk");
-const ddb = new AWS.DynamoDB({ region: "us-east-1", apiVersion: "2012-08-10" });
 
-const { marshall, unmarshall } = AWS.DynamoDB.Converter;
+const { marshall } = AWS.DynamoDB.Converter;
+const ddb = new AWS.DynamoDB({
+  region: "us-east-1",
+  apiVersion: "2012-08-10"
+});
 
 exports.handler = function(event, context, callback) {
+
   let existingId = null;
   let name = null;
   if (event.body) {
@@ -23,7 +27,7 @@ exports.handler = function(event, context, callback) {
   };
 
   if (!season.seasonId || !season.name) {
-    return customError('Seasons require a seasonId and name', callback);
+    return customError("Seasons require a seasonId and name", callback);
   }
 
   ddb.putItem(
@@ -33,13 +37,7 @@ exports.handler = function(event, context, callback) {
     },
     err => {
       if (err) {
-        callback(null, {
-          statusCode: 500,
-          headers: {
-            "Access-Control-Allow-Origin": "*"
-          },
-          body: JSON.stringify(err)
-        });
+        customError(err.message, callback)
       } else {
         callback(null, {
           statusCode: 200,
@@ -52,15 +50,3 @@ exports.handler = function(event, context, callback) {
     }
   );
 };
-
-function customError(message, callback) {
-  callback(null, {
-    statusCode: 500,
-    headers: {
-      "Access-Control-Allow-Origin": "*"
-    },
-    body: JSON.stringify({
-      message
-    })
-  });
-}

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy-lambdas": "node deploy"
+    "deploy-lambdas": "webpack && node deploy"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,14 @@
   },
   "homepage": "https://github.com/Daniel-McK/survivor-serverless#readme",
   "dependencies": {
-    "aws": "0.0.3-2",
-    "aws-sdk": "^2.307.0",
     "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "webpack": "^4.17.1",
+    "@types/node": "^10.9.4",
+    "aws-sdk": "^2.307.0",
+    "ts-loader": "^4.5.0",
+    "typescript": "^3.0.3",
+    "webpack-cli": "^3.1.0"
   }
 }
