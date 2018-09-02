@@ -1,0 +1,25 @@
+{
+  "name": "survivor-serverless",
+  "version": "1.0.0",
+  "description": "Fantasy Survivor - Serverless",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-lambdas": "node deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-McK/survivor-serverless.git"
+  },
+  "author": "Daniel McKittrick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Daniel-McK/survivor-serverless/issues"
+  },
+  "homepage": "https://github.com/Daniel-McK/survivor-serverless#readme",
+  "dependencies": {
+    "aws": "0.0.3-2",
+    "aws-sdk": "^2.307.0",
+    "fs": "0.0.1-security"
+  }
+}

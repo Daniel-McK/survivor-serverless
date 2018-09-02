@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# AWS keys
+config/aws.js
+
+# build files
+lambda/*/code.zip
