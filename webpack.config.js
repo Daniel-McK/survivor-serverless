@@ -13,6 +13,18 @@ module.exports = {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/
+      },
+      {
+        test: /\.ts$/,
+        enforce: "pre",
+        use: [
+          {
+            loader: "tslint-loader",
+            options: {
+              emitErrors: true
+            }
+          }
+        ]
       }
     ]
   },
@@ -25,6 +37,6 @@ module.exports = {
   },
   mode: "production",
   externals: {
-    'aws-sdk': "require('aws-sdk')",
+    "aws-sdk": "require('aws-sdk')"
   }
 };
