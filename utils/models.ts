@@ -16,3 +16,8 @@ export interface Episode {
   name: string;
   date: number;
 }
+
+export interface PointType {
+  name: string;
+  value: number;
+}
