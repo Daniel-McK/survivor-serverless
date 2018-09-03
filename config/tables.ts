@@ -1,5 +1,6 @@
 export enum TableName {
   Season = 'Season',
   Contestant = 'Contestant',
-  Episode = 'Episode'
+  Episode = 'Episode',
+  PointType = 'PointType'
 }
