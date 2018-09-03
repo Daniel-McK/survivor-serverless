@@ -9,3 +9,10 @@ export interface Contestant {
   id: string;
   imageUrl?: string;
 }
+
+export interface Episode {
+  seasonId: string;
+  id: string;
+  name: string;
+  date: number;
+}

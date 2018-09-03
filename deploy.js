@@ -11,7 +11,8 @@ const lambdaFunctions = [
   'createSeason',
   'getContestantsBySeason',
   'putContestant',
-  'getEpisodesBySeason'
+  'getEpisodesBySeason',
+  'putEpisode'
 ];
 
 lambdaFunctions.forEach(deployLambda);
