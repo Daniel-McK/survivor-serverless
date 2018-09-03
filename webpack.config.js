@@ -1,14 +1,15 @@
+const _ = require('lodash');
+const { getLambdas } = require('./utils/build');
 const path = require("path");
 
+const lambdaFunctions = getLambdas();
+// switch to a map
+let entry = _.keyBy(lambdaFunctions, (fnName) => fnName);
+// format the values as paths
+entry = _.mapValues(entry, (fnName) => `./lambda/${fnName}.ts`);
+
 module.exports = {
-  entry: {
-    createSeason: "./lambda/createSeason.ts",
-    getSeasonList: "./lambda/getSeasonList.ts",
-    getContestantsBySeason: "./lambda/getContestantsBySeason.ts",
-    putContestant: "./lambda/putContestant.ts",
-    getEpisodesBySeason: "./lambda/getEpisodesBySeason.ts",
-    putEpisode: "./lambda/putEpisode.ts"
-  },
+  entry,
   module: {
     rules: [
       {

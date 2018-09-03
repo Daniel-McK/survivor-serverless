@@ -3,17 +3,11 @@ const resolve = require('path').resolve;
 const AWS = require('aws-sdk');
 const fs = require('fs');
 const credentials = require('./config/aws');
+const { getLambdas } = require('./utils/build');
 
 const lambda = new AWS.Lambda({ region: 'us-east-1', credentials });
 
-const lambdaFunctions = [
-  'getSeasonList',
-  'createSeason',
-  'getContestantsBySeason',
-  'putContestant',
-  'getEpisodesBySeason',
-  'putEpisode'
-];
+const lambdaFunctions = getLambdas();
 
 lambdaFunctions.forEach(deployLambda);
 
