@@ -2,9 +2,9 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    createSeason: "./lambda/createSeason/index.ts",
-    getSeasonList: "./lambda/getSeasonList/index.ts",
-    getContestantsBySeason: "./lambda/getContestantsBySeason/index.ts"
+    createSeason: "./lambda/createSeason.ts",
+    getSeasonList: "./lambda/getSeasonList.ts",
+    getContestantsBySeason: "./lambda/getContestantsBySeason.ts"
   },
   module: {
     rules: [

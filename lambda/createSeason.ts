@@ -1,5 +1,5 @@
-import { customError } from "../../utils/errors";
-import { TableName } from "../../config/tables";
+import { customError } from "../utils/errors";
+import { TableName } from "../config/tables";
 
 const AWS = require("aws-sdk");
 
