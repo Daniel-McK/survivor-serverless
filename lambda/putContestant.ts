@@ -1,6 +1,6 @@
 import { TableName } from '../config/tables';
-import { customError } from '../utils/errors';
 import { Contestant } from '../utils/models';
+import { customError, success } from '../utils/responses';
 
 const AWS = require('aws-sdk');
 
@@ -40,13 +40,7 @@ exports.handler = (event, context, callback) => {
       if (err) {
         customError(err.message, callback);
       } else {
-        callback(null, {
-          statusCode: 200,
-          headers: {
-            'Access-Control-Allow-Origin': '*'
-          },
-          body: JSON.stringify({ success: true })
-        });
+        success(JSON.stringify({ success: true }), callback);
       }
     }
   );

@@ -1,5 +1,5 @@
 import { TableName } from '../config/tables';
-import { customError } from '../utils/errors';
+import { customError, success } from '../utils/responses';
 const AWS = require('aws-sdk');
 const ddb = new AWS.DynamoDB({
   region: 'us-east-1',
@@ -24,13 +24,7 @@ exports.handler = (event, context, callback) => {
     if (err) {
       customError(err.message, callback);
     } else {
-      callback(null, {
-        statusCode: 200,
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        },
-        body: JSON.stringify(data.Items.map(unmarshall))
-      });
+      success(JSON.stringify(data.Items.map(unmarshall)), callback);
     }
   });
 };

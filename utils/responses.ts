@@ -9,3 +9,13 @@ export function customError(message, callback) {
     }
   });
 }
+
+export function success(body, callback) {
+  callback(null, {
+    body,
+    statusCode: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
+  });
+}
