@@ -9,7 +9,8 @@ const lambda = new AWS.Lambda({ region: 'us-east-1', credentials });
 const lambdaFunctions = [
   'getSeasonList',
   'createSeason',
-  'getContestantsBySeason'
+  'getContestantsBySeason',
+  'putContestant'
 ];
 
 lambdaFunctions.forEach(deployLambda);
@@ -32,11 +33,11 @@ function updateCode(FunctionName, ZipFile) {
   lambda.updateFunctionCode({
     FunctionName,
     ZipFile
-  }, (err) => {
+  }, (err, data) => {
     if (err) {
       console.log(`Failed to deploy ${FunctionName}: ${err}`);
     } else {
-      console.log(`Deployed ${FunctionName}`);
+      console.log(`Deployed ${FunctionName} [${data.FunctionArn}]`);
     }
   });
 }
