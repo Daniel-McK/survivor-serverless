@@ -6,7 +6,8 @@
     "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
     "object-literal-sort-keys": false,
     "no-var-requires": false,
-    "one-line": [true, "check-catch", "check-finally", "check-else"]
+    "one-line": [true, "check-catch", "check-finally", "check-else"],
+    "interface-name" : [true, "never-prefix"]
   },
   "rulesDirectory": []
 }

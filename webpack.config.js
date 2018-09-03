@@ -41,5 +41,6 @@ module.exports = {
   mode: "production",
   externals: {
     "aws-sdk": "require('aws-sdk')"
-  }
+  },
+  performance: { hints: false }
 };

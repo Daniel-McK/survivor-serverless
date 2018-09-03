@@ -21,3 +21,9 @@ export interface PointType {
   name: string;
   value: number;
 }
+
+export interface User {
+  username: string;
+  firstName: string;
+  lastName: string;
+}
