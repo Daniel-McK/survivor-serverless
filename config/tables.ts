@@ -1,4 +1,5 @@
 export enum TableName {
   Season = 'Season',
-  Contestant = 'Contestant'
+  Contestant = 'Contestant',
+  Episode = 'Episode'
 }

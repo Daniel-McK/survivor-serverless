@@ -5,7 +5,8 @@ module.exports = {
     createSeason: "./lambda/createSeason.ts",
     getSeasonList: "./lambda/getSeasonList.ts",
     getContestantsBySeason: "./lambda/getContestantsBySeason.ts",
-    putContestant: "./lambda/putContestant.ts"
+    putContestant: "./lambda/putContestant.ts",
+    getEpisodesBySeason: "./lambda/getEpisodesBySeason.ts"
   },
   module: {
     rules: [
