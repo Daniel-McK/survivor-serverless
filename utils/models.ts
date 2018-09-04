@@ -27,3 +27,10 @@ export interface User {
   firstName: string;
   lastName: string;
 }
+
+export interface Point {
+  seasonId: string;
+  contestantPlusId: string;
+  episodeId: string;
+  pointType: PointType;
+}
