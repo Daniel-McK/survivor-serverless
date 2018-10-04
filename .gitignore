@@ -65,3 +65,6 @@ config/aws.js
 
 # build files
 dist/
+
+# macOS
+.DS_Store

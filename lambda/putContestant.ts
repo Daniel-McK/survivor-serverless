@@ -26,7 +26,8 @@ exports.handler = (event, context, callback) => {
     seasonId,
     name: jsonBody.name,
     id: jsonBody.id || event.pathParameters.contestantId,
-    imageUrl: jsonBody.imageUrl
+    imageUrl: jsonBody.imageUrl,
+    userId: jsonBody.userId
   };
 
   if (!contestant.id || !contestant.name || !contestant.seasonId) {
