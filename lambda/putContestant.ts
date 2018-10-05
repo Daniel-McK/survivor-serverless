@@ -27,11 +27,12 @@ exports.handler = (event, context, callback) => {
     name: jsonBody.name,
     id: jsonBody.id || event.pathParameters.contestantId,
     imageUrl: jsonBody.imageUrl,
-    userId: jsonBody.userId
+    userId: jsonBody.userId,
+    tribeName: jsonBody.tribeName
   };
 
-  if (!contestant.id || !contestant.name || !contestant.seasonId) {
-    return customError('Contestants require seasonId, id and name', callback);
+  if (!contestant.id || !contestant.name || !contestant.seasonId || !contestant.tribeName) {
+    return customError('Contestants require seasonId, id, name and tribeName', callback);
   }
 
   ddb.putItem({

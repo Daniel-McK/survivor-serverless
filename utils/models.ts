@@ -8,7 +8,8 @@ export interface Contestant {
   name: string;
   id: string;
   imageUrl?: string;
-  userId: string;
+  userId?: string;
+  tribeName: string;
 }
 
 export interface Episode {
